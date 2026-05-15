@@ -1,0 +1,79 @@
+{
+  "name": "svf-analysis-linter",
+  "displayName": "SVF Analysis Linter",
+  "description": "A VS Code extension that visualizes SVF diagnostics and taint-flow paths inside the editor.",
+  "version": "0.0.1",
+  "publisher": "admis",
+  "author": "admis",
+  "license": "MIT",
+  "preview": true,
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "svf",
+    "static-analysis",
+    "taint-analysis",
+    "security",
+    "diagnostics",
+    "vscode-extension"
+  ],
+  "activationEvents": [
+    "onCommand:svf.runAnalysis",
+    "onCommand:svf.clearDiagnostics",
+    "onView:svf-taint-flows"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "svf-sidebar",
+          "title": "SVF Analysis",
+          "icon": "$(shield)"
+        }
+      ]
+    },
+    "views": {
+      "svf-sidebar": [
+        {
+          "id": "svf-taint-flows",
+          "name": "Taint Flows",
+          "icon": "$(shield)",
+          "contextualTitle": "SVF Taint Flows"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "svf.runAnalysis",
+        "title": "SVF: Run Analysis on Current File",
+        "category": "SVF"
+      },
+      {
+        "command": "svf.clearDiagnostics",
+        "title": "SVF: Clear Diagnostics",
+        "category": "SVF"
+      },
+      {
+        "command": "svf.gotoLine",
+        "title": "SVF: Go To Line",
+        "category": "SVF"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.0"
+  }
+}

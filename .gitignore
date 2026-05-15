@@ -1,0 +1,10 @@
+node_modules/
+out/
+build/
+
+.vscode/settings.json
+.vscode/c_cpp_properties.json
+
+/demo-problems.png
+/demo-taint-flows.png
+/shield-icon.png
