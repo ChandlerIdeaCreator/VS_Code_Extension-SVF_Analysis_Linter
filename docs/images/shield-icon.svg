@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">SVF Analysis Shield Icon</title>
+  <desc id="desc">A shield icon with a code bracket and check mark for static analysis.</desc>
+  <defs>
+    <linearGradient id="shieldBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#103B4A"/>
+      <stop offset="100%" stop-color="#1F7A63"/>
+    </linearGradient>
+    <linearGradient id="shieldGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="44" fill="#0B1720"/>
+  <path d="M128 28L196 54V110C196 159 167 201 128 222C89 201 60 159 60 110V54L128 28Z" fill="url(#shieldBg)" stroke="#B7F1D8" stroke-width="6"/>
+  <path d="M128 40L186 62V110C186 152 162 188 128 207C94 188 70 152 70 110V62L128 40Z" fill="url(#shieldGloss)"/>
+  <path d="M105 95L84 116L105 137" fill="none" stroke="#EAFBF3" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M151 95L172 116L151 137" fill="none" stroke="#EAFBF3" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M101 160L120 179L159 138" fill="none" stroke="#FFD166" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

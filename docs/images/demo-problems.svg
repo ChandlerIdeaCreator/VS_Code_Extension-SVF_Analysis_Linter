@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">SVF diagnostics demo</title>
+  <desc id="desc">A stylized screenshot showing diagnostics and a problems panel for the SVF Analysis extension.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1118"/>
+      <stop offset="100%" stop-color="#162734"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2D3A"/>
+      <stop offset="100%" stop-color="#101C27"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="820" rx="28" fill="url(#bg)"/>
+  <rect x="18" y="18" width="1364" height="62" rx="18" fill="#0E1821" stroke="#223343"/>
+  <circle cx="55" cy="49" r="8" fill="#EF8354"/>
+  <circle cx="80" cy="49" r="8" fill="#F6BD60"/>
+  <circle cx="105" cy="49" r="8" fill="#84DCC6"/>
+  <rect x="150" y="34" width="400" height="30" rx="14" fill="#1E313F"/>
+  <text x="175" y="54" font-size="18" fill="#97B6C7" font-family="Segoe UI, Arial, sans-serif">SVF Analysis Linter · diagnostics preview</text>
+  <rect x="26" y="96" width="1348" height="510" rx="20" fill="#111B24" stroke="#243847"/>
+  <rect x="48" y="118" width="120" height="34" rx="10" fill="#193648"/>
+  <text x="74" y="141" font-size="18" fill="#8ED1FC" font-family="Consolas, monospace">test.c</text>
+  <rect x="48" y="176" width="1304" height="406" rx="16" fill="url(#panel)"/>
+  <g font-family="Consolas, monospace" font-size="22">
+    <text x="74" y="220" fill="#C792EA">#include</text>
+    <text x="190" y="220" fill="#A5D6A7">&lt;stdio.h&gt;</text>
+    <text x="74" y="268" fill="#82AAFF">int</text>
+    <text x="121" y="268" fill="#F6C177">main</text>
+    <text x="176" y="268" fill="#D6DEEB">(int argc, char *argv[]) {</text>
+    <text x="115" y="316" fill="#D6DEEB">char *user_input = argv[1];</text>
+    <text x="860" y="316" fill="#6E8795">Source: untrusted external input</text>
+    <text x="115" y="364" fill="#F6C177">strcpy</text>
+    <text x="194" y="364" fill="#D6DEEB">(local_buffer, user_input);</text>
+    <text x="860" y="364" fill="#6E8795">Propagation: copied into local buffer</text>
+    <text x="115" y="412" fill="#F6C177">helper</text>
+    <text x="189" y="412" fill="#D6DEEB">(local_buffer);</text>
+    <text x="860" y="412" fill="#6E8795">Propagation: passed as argument</text>
+    <text x="115" y="460" fill="#82AAFF">void</text>
+    <text x="170" y="460" fill="#F6C177">helper</text>
+    <text x="245" y="460" fill="#D6DEEB">(char *buf) { </text>
+    <text x="415" y="460" fill="#F07178">system</text>
+    <text x="491" y="460" fill="#D6DEEB">(buf); }</text>
+    <text x="860" y="460" fill="#F28B82">Sink: command injection risk</text>
+  </g>
+  <path d="M115 374H418" stroke="#F07178" stroke-width="4" stroke-linecap="round"/>
+  <path d="M415 470H525" stroke="#F07178" stroke-width="4" stroke-linecap="round"/>
+  <rect x="26" y="628" width="1348" height="166" rx="20" fill="#0D1720" stroke="#243847"/>
+  <text x="50" y="666" font-size="22" fill="#B9CFDB" font-family="Segoe UI, Arial, sans-serif">Problems</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="20">
+    <circle cx="66" cy="706" r="9" fill="#F07178"/>
+    <text x="92" y="713" fill="#D8E7EF">Null Pointer Dereference</text>
+    <text x="500" y="713" fill="#86A5B4">SVF · line 3, column 12</text>
+    <circle cx="66" cy="744" r="9" fill="#F07178"/>
+    <text x="92" y="751" fill="#D8E7EF">Memory Leak detected</text>
+    <text x="500" y="751" fill="#86A5B4">SVF · line 10, column 5</text>
+    <circle cx="66" cy="782" r="9" fill="#F07178"/>
+    <text x="92" y="789" fill="#D8E7EF">Tainted Flow source</text>
+    <text x="500" y="789" fill="#86A5B4">SVF · line 15, column 8</text>
+  </g>
+</svg>
